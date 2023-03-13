@@ -1,5 +1,6 @@
 set(${PROJECT_NAME}_SOURCES
     main.cpp
+    brightness_controller.cpp
     )
 
 include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
