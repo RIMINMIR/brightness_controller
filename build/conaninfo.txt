@@ -1,0 +1,31 @@
+[settings]
+
+
+[requires]
+    libgd/2.Y.Z
+
+[options]
+
+
+[full_settings]
+
+
+[full_requires]
+    libgd/2.3.0:b88c434d8110e892fcfb7bbb4f76234f590822f1
+    zlib/1.2.13:dfbe50feef7f3c6223a476cd5aeadb687084a646
+
+[full_options]
+    libgd:fPIC=True
+    libgd:shared=False
+    libgd:with_freetype=False
+    libgd:with_jpeg=False
+    libgd:with_png=False
+    libgd:with_tiff=False
+    zlib:fPIC=True
+    zlib:shared=False
+
+[recipe_hash]
+
+
+[env]
+

@@ -1,0 +1,42 @@
+{
+ "options": [
+  [
+   "libgd:fPIC",
+   "True"
+  ],
+  [
+   "libgd:shared",
+   "False"
+  ],
+  [
+   "libgd:with_freetype",
+   "False"
+  ],
+  [
+   "libgd:with_jpeg",
+   "False"
+  ],
+  [
+   "libgd:with_png",
+   "False"
+  ],
+  [
+   "libgd:with_tiff",
+   "False"
+  ],
+  [
+   "zlib:fPIC",
+   "True"
+  ],
+  [
+   "zlib:shared",
+   "False"
+  ]
+ ],
+ "root": {
+  "name": "main",
+  "version": "1.0",
+  "user": null,
+  "channel": null
+ }
+}
