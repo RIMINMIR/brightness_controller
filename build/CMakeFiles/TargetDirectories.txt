@@ -1,3 +1,0 @@
-/home/vik/repos/brightness_controller/build/CMakeFiles/Project.dir
-/home/vik/repos/brightness_controller/build/CMakeFiles/edit_cache.dir
-/home/vik/repos/brightness_controller/build/CMakeFiles/rebuild_cache.dir
