@@ -1,11 +1,12 @@
 #include "brightnes_controller.h"
+#include "image_file_manager.h"
 
 #include <gd.h>
 
 #include <iostream>
 #include <string>
 #include <memory>
-
+#include <cstdint>
 int main()
 {
     std::cout <<"enter image path\n";
@@ -13,26 +14,43 @@ int main()
     std::string imagePath{};
 
     std::cin >> imagePath;
-
-    auto image = gdImageCreateFromFile(imagePath.c_str());
-
-    std::cout<< gdSupportsFileType(imagePath.c_str(), false)<<std::endl;
-
-
-    if(!image)
+    ImageFileManager fileManager = {};
+    std::shared_ptr<ImageWrapper> wrapper;
+    try
     {
-        std::cout <<"error while opening the image\n";
+        wrapper = fileManager.LoadImage(imagePath);
+    }
+    catch(std::logic_error err)
+    {
+        std::cout << err.what();
         return 0;
     }
 
-    auto controller = std::make_shared<BrightnessController>(image);
-    controller->ChangeBrightness(40);
-    image = controller->GetImage();
-    gdImageFile(image, "test.jpg");
+    BrightnessController controller = {wrapper};
 
+    std::cout <<"enter the brightness\n";
 
+    int32_t brightness;
 
+    std::cin >> brightness;
 
+    controller.ChangeBrightness(40);
+
+    std::cout <<"enter the new file name\n";
+
+    std::string newFilePath;
+
+    std::cin >> newFilePath;
+
+    try
+    {
+        fileManager.SaveImage(newFilePath, wrapper);
+    }
+    catch(std::logic_error err)
+    {
+        std::cout << err.what();
+        return 0;
+    }
 
     return 0;
 }

@@ -1,23 +1,21 @@
 
 #pragma once
 
-#include <gd.h>
+#include "image_wrapper.h"
 
 #include<stdint.h>
+#include <memory>
 
 // \brief класс отвечающий за поднятие яркости
 class BrightnessController
 {
 public:
     // \param image указатель на изображение
-    BrightnessController(gdImagePtr image);
+    BrightnessController(std::shared_ptr<ImageWrapper> image);
     // \brief увеличить яркость
     // \param brightness значение на которое будет увеличина яркость
     void ChangeBrightness(int32_t brightness);
-
-    // \param получение готового изображения
-    gdImagePtr GetImage();
     
 private:
-    gdImagePtr image_;
+    std::shared_ptr<ImageWrapper> image_;
 };

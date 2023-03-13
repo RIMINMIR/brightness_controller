@@ -1,17 +1,11 @@
-#include <brightnes_controller.h>
+#include "brightnes_controller.h"
 
-BrightnessController::BrightnessController(gdImagePtr image)
+BrightnessController::BrightnessController(std::shared_ptr<ImageWrapper> image)
 {
     image_ = image;
 }
 
 void BrightnessController::ChangeBrightness(int32_t brightness)
 {
-    gdImageBrightness(image_, brightness);
-}
-
-
-gdImagePtr BrightnessController::GetImage()
-{
-    return image_;
+    gdImageBrightness(image_->Get(), brightness);
 }
