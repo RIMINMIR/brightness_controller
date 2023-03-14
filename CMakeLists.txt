@@ -10,6 +10,8 @@ conan_basic_setup()
 
 set(${PROJECT_NAME}_LIBS
     ${CONAN_LIBS_LIBGD}
+    ${CONAN_LIBS_LIBPNG}
+    ${CONAN_LIBS_ZLIB}
 )
 
 set(PRIVATE_COMPILE_DEFINITIONS
